@@ -18,14 +18,14 @@
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
 
-   <groupId>com.bernardomg</groupId>
+   <groupId>com.bernardomg.framework</groupId>
    <artifactId>pagination</artifactId>
-   <version>1.0.0</version>
+   <version>1.0.1</version>
    <packaging>jar</packaging>
 
    <name>Basic pagination model</name>
    <description>A simple model to handle pagination</description>
-   <url>https://github.com/bernardo-mg/pagination</url>
+   <url>https://github.com/Bernardo-MG/java-pagination</url>
    <inceptionYear>2026</inceptionYear>
 
    <licenses>
@@ -41,20 +41,20 @@
    <!-- ********************************************** -->
 
    <scm>
-      <connection>scm:git:https://github.com/bernardo-mg/pagination.git</connection>
-      <developerConnection>scm:git:https://github.com/bernardo-mg/pagination.git</developerConnection>
+      <connection>scm:git:https://github.com/Bernardo-MG/java-pagination.git</connection>
+      <developerConnection>scm:git:https://github.com/Bernardo-MG/java-pagination.git</developerConnection>
       <tag>head</tag>
-      <url>https://github.com/bernardo-mg/pagination</url>
+      <url>https://github.com/Bernardo-MG/java-pagination</url>
    </scm>
 
    <issueManagement>
       <system>GitHub</system>
-      <url>https://github.com/bernardo-mg/pagination/issues</url>
+      <url>https://github.com/Bernardo-MG/java-pagination/issues</url>
    </issueManagement>
 
    <ciManagement>
       <system>Github</system>
-      <url>https://github.com/bernardo-mg/pagination/actions</url>
+      <url>https://github.com/Bernardo-MG/java-pagination/actions</url>
       <notifiers />
    </ciManagement>
 
@@ -91,7 +91,7 @@
                <!-- Github repository -->
                <id>github</id>
                <name>GitHub Packages</name>
-               <url>https://maven.pkg.github.com/bernardo-mg/pagination</url>
+               <url>https://maven.pkg.github.com/Bernardo-MG/java-pagination</url>
             </repository>
          </distributionManagement>
       </profile>

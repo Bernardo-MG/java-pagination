@@ -1,16 +1,6 @@
 # Basic pagination model
 
-This is a basic Maven-based Java project created with the use of the [Library Maven Archetype](https://github.com/Bernardo-MG/library-maven-archetype). It will ease the development of new libraries, setting it up for CI through the use of free services: [Github](https://github.com/), [Github Workflow](https://docs.github.com/en/actions/configuring-and-managing-workflows), [Github Packages](https://github.com/features/packages) and [OSS Sonatype](https://oss.sonatype.org/).
-
-Before beginning with the new project there are a few things which should be edited:
-
-- This readme's description has to be adapted to the new project.
-- Project info on the POM should be checked.
-- The various links on the readme, POM and Maven site (for repositories, issues, etc) should be verified.
-- The documentation on the project's [Maven Site](https://maven.apache.org/plugins/maven-site-plugin/) has to be written.
-- The license, if not using the MIT one, should be changed. Remember that this is referenced on the POM, readme and LICENSE files.
-
-Note that the Maven site is using the [Docs Maven Skin](https://github.com/Bernardo-MG/docs-maven-skin), which will have a few configuration requirements of its own.
+A small pagination model for Java projects.
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg/pagination.svg)][maven-repo]
 
