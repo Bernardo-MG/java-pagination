@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  * <p>
- * Copyright (c) 2026 the original author or authors.
+ * Copyright (c) 2023-2025 the original author or authors.
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -21,8 +21,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-/**
- * Provides placeholder integration tests.
- */
-package com.bernardomg.pagination.test.integration;
 
+package com.bernardomg.pagination.domain;
+
+/**
+ * Pagination to apply when reading data.
+ *
+ * @author Bernardo Mart&iacute;nez Garrido
+ *
+ */
+public record Pagination(int page, int size, boolean paged) {
+
+    public Pagination(final int page, final int size) {
+        this(page, size, true);
+    }
+
+    public static Pagination unpaged() {
+        return new Pagination(0, 0, false);
+    }
+
+}
