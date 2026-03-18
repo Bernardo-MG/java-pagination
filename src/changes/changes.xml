@@ -5,6 +5,8 @@
         <author email="programming@bernardomg.com">Bernardo Martínez Garrido</author>
     </properties>
     <body>
+        <release version="1.1.0" date="2026-03-18" description="">
+        </release>
         <release version="1.0.1" date="2026-03-18" description="Group id">
             <action dev="bmg" type="add">
                 Fixed group id.
