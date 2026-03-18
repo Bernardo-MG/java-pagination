@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  * <p>
- * Copyright (c) 2026 the original author or authors.
+ * Copyright (c) 2023-2025 the original author or authors.
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,36 +22,29 @@
  * SOFTWARE.
  */
 
-package com.bernardomg.pagination.test.unit;
+package com.bernardomg.pagination.domain;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import com.bernardomg.pagination.Greeter;
+import java.util.Collection;
+import java.util.List;
 
 /**
- * Unit tests for {@link Greeter}.
- * <p>
- * This is just a placeholder test for the unit tests suite.
+ * Page containing a paged collection.
  *
- * @author Bernardo Martínez Garrido
+ * @author Bernardo Mart&iacute;nez Garrido
  *
  */
-public final class TestGreeter {
+public record Page<T>(Collection<T> content, int size, int page, long totalElements, long totalPages,
+        int elementsInPage, boolean first, boolean last, Sorting sort) {
 
     /**
-     * Default constructor.
+     * Empty page.
+     *
+     * @param <E>
+     *            content type
+     * @return an empty page
      */
-    public TestGreeter() {
-        super();
-    }
-
-    /**
-     * Tests that the {@code Greeter} returns a greeting.
-     */
-    @Test
-    public final void sayHello() {
-        Assertions.assertThat(new Greeter().sayHello()).isEqualTo("Hello World!");
+    public static final <E> Page<E> empty() {
+        return new Page<>(List.of(), 0, 0, 0, 0, 0, true, true, Sorting.unsorted());
     }
 
 }

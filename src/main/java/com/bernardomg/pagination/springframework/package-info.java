@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  * <p>
- * Copyright (c) 2026 the original author or authors.
+ * Copyright (c) 2023-2025 the original author or authors.
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,36 +22,8 @@
  * SOFTWARE.
  */
 
-package com.bernardomg.pagination.test.integration;
-
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import com.bernardomg.pagination.Greeter;
-
 /**
- * Integration tests for {@link Greeter}.
- * <p>
- * This is actually a placeholder test for the integration tests suite.
- *
- * @author Bernardo Martínez Garrido
- *
+ * Adapter for the domain and Spring.
  */
-public final class ITGreeter {
 
-    /**
-     * Default constructor.
-     */
-    public ITGreeter() {
-        super();
-    }
-
-    /**
-     * Tests that the {@code Greeter} returns a greeting.
-     */
-    @Test
-    public final void sayHello() {
-        Assertions.assertThat(new Greeter().sayHello()).isEqualTo("Hello World!");
-    }
-
-}
+package com.bernardomg.pagination.springframework;
