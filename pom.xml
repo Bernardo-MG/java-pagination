@@ -18,7 +18,7 @@
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
 
-   <groupId>com.bernardomg</groupId>
+   <groupId>com.bernardomg.framework</groupId>
    <artifactId>pagination</artifactId>
    <version>0.0.1-SNAPSHOT</version>
    <packaging>jar</packaging>
