@@ -2,17 +2,7 @@
 
 A small pagination model for Java projects.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.framework/pagination.svg)][maven-repo]
-
-## Features
-
-The project by default comes with a useful series of features:
-
-- Preconfigured POM to begin developing a new library fast.
-- Prepared for [Github Workflow](https://docs.github.com/en/actions/configuring-and-managing-workflows), including configuration files and deployment scripts. Check the [Archetype documentation](https://docs.bernardomg.com/maven/library-maven-archetype) to find out more.
-- Unit and integration tests suites ready to be run with [JUnit](https://junit.org) just by using the Maven test and verify commands.
-- A Maven site, using the [Docs Maven Skin](https://github.com/Bernardo-MG/docs-maven-skin), to contain the documentation, the Javadocs and several reports.
-- A bunch of useful files, such as readme, gitignore and gitattributes.
+[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.framework/event.svg)][maven-repo]
 
 ## Usage
 
