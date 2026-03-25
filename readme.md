@@ -2,7 +2,7 @@
 
 A small pagination model for Java projects.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.framework/event.svg)][maven-repo]
+[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.framework/pagination.svg)][maven-repo]
 
 ## Usage
 
