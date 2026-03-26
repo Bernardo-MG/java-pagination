@@ -29,7 +29,8 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Sorting to apply when reading data.
+ * Sorting to apply when reading data. It is based on the properties to sort by, if the collection is empty then there
+ * is no sorting to apply.
  *
  * @author Bernardo Mart&iacute;nez Garrido
  *
@@ -82,6 +83,20 @@ public record Sorting(Collection<Property> properties) {
     }
 
     /**
+     * Descending sorting.
+     *
+     * @param properties
+     *            properties to sort by
+     * @return ascending sorting
+     */
+    public static final Sorting desc(final String... properties) {
+        return new Sorting(Arrays.asList(properties)
+            .stream()
+            .map(Property::desc)
+            .toList());
+    }
+
+    /**
      * Property to sort by.
      */
     public record Property(String name, Direction direction) {
@@ -113,7 +128,14 @@ public record Sorting(Collection<Property> properties) {
      * Direction to sort by.
      */
     public enum Direction {
-        ASC, DESC
+        /**
+         * Ascending order.
+         */
+        ASC,
+        /**
+         * Descending order.
+         */
+        DESC
     }
 
 }

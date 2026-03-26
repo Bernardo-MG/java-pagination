@@ -24,8 +24,6 @@
 
 package com.bernardomg.pagination.springframework;
 
-import java.util.List;
-
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -33,10 +31,9 @@ import org.springframework.data.domain.Sort;
 import com.bernardomg.pagination.domain.Page;
 import com.bernardomg.pagination.domain.Pagination;
 import com.bernardomg.pagination.domain.Sorting;
-import com.bernardomg.pagination.domain.Sorting.Property;
 
 /**
- * Utilities to transform {@link Pagination} into {@link Pageable}.
+ * Transforms a {@link Pagination} into a Spring {@link Pageable}, and the domain {@code Page} into Spring's one.
  * <p>
  * Spring pages start with index 0, so the page number has to be corrected.
  *
@@ -45,17 +42,30 @@ import com.bernardomg.pagination.domain.Sorting.Property;
  */
 public final class SpringPagination {
 
+    /**
+     * Transform a Spring page into the domain's one.
+     *
+     * @param <T>
+     *            type contained in the page
+     * @param page
+     *            Spring page to transform
+     * @return a domain page
+     */
     public static final <T> Page<T> toPage(final org.springframework.data.domain.Page<T> page) {
-        List<Property> properties;
+        final Sorting sorting;
 
-        properties = page.getSort()
-            .stream()
-            .map(SpringSorting::toProperty)
-            .toList();
+        sorting = SpringSorting.toSorting(page.getSort());
         return new Page<>(page.getContent(), page.getSize(), page.getNumber() + 1, page.getTotalElements(),
-            page.getTotalPages(), page.getNumberOfElements(), page.isFirst(), page.isLast(), new Sorting(properties));
+            page.getTotalPages(), page.getNumberOfElements(), page.isFirst(), page.isLast(), sorting);
     }
 
+    /**
+     * Transforms a {@link Pagination} into a {@link Pageable}.
+     *
+     * @param pagination
+     *            {@code Pagination} to page
+     * @return a {@link Pageable} created from the {@code Pagination}
+     */
     public static final Pageable toPageable(final Pagination pagination) {
         final Pageable pageable;
 
@@ -68,6 +78,15 @@ public final class SpringPagination {
         return pageable;
     }
 
+    /**
+     * Transforms a {@link Pagination} into a {@link Pageable}, including sorting info.
+     *
+     * @param pagination
+     *            {@code Pagination} to page
+     * @param sorting
+     *            sorting info to apply
+     * @return a {@link Pageable} created from the {@code Pagination} and {@code Sorting}
+     */
     public static final Pageable toPageable(final Pagination pagination, final Sorting sorting) {
         final Sort     sort;
         final Pageable pageable;
@@ -82,6 +101,9 @@ public final class SpringPagination {
         return pageable;
     }
 
+    /**
+     * Private constructor.
+     */
     private SpringPagination() {
         super();
     }

@@ -104,6 +104,9 @@ public final class WebSorting {
         return "asc".equals(direction.toLowerCase()) || "desc".equals(direction.toLowerCase());
     }
 
+    /**
+     * Private constructor.
+     */
     private WebSorting() {
         super();
     }
