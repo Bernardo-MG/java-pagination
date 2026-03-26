@@ -28,7 +28,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Page containing a paged collection.
+ * Page containing a paged collection. Includes the {@link Sorting} applied to the data.
  *
  * @author Bernardo Mart&iacute;nez Garrido
  *

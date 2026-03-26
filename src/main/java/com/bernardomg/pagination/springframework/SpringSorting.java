@@ -24,6 +24,8 @@
 
 package com.bernardomg.pagination.springframework;
 
+import java.util.Collection;
+
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Order;
 
@@ -32,32 +34,21 @@ import com.bernardomg.pagination.domain.Sorting.Direction;
 import com.bernardomg.pagination.domain.Sorting.Property;
 
 /**
- * Utilities to transform {@link Sorting} into {@link Sort}.
+ * Transforms a {@link Sorting} into a Spring {@link Sort} and back.
  *
  * @author Bernardo Mart&iacute;nez Garrido
  *
  */
 public final class SpringSorting {
 
-    public static final Property toProperty(final Order order) {
-        Direction direction;
-
-        if (order.isAscending()) {
-            direction = Direction.ASC;
-        } else {
-            direction = Direction.DESC;
-        }
-        return new Property(order.getProperty(), direction);
-    }
-
-    public static final Sort toSort(final Sorting sorting) {
-        return Sort.by(sorting.properties()
-            .stream()
-            .map(SpringSorting::toOrder)
-            .toList());
-    }
-
-    private static final Order toOrder(final Property property) {
+    /**
+     * Transforms a {@link Property} into a {@link Order}.
+     *
+     * @param property
+     *            {@code Property} to transform
+     * @return a {@code Property} created from the {@code Order}
+     */
+    public static final Order toOrder(final Property property) {
         final Order order;
 
         if (Direction.ASC.equals(property.direction())) {
@@ -69,6 +60,58 @@ public final class SpringSorting {
         return order;
     }
 
+    /**
+     * Transforms a {@link Order} into a {@link Property}.
+     *
+     * @param order
+     *            {@code Order} to transform
+     * @return a {@code Property} created from the {@code Order}
+     */
+    public static final Property toProperty(final Order order) {
+        final Direction direction;
+
+        if (order.isAscending()) {
+            direction = Direction.ASC;
+        } else {
+            direction = Direction.DESC;
+        }
+        return new Property(order.getProperty(), direction);
+    }
+
+    /**
+     * Transforms a {@link Sorting} into a {@link Sort}.
+     *
+     * @param sorting
+     *            {@code Sorting} to transform
+     * @return a {@code Sort} created from the {@code Sorting}
+     */
+    public static final Sort toSort(final Sorting sorting) {
+        return Sort.by(sorting.properties()
+            .stream()
+            .map(SpringSorting::toOrder)
+            .toList());
+    }
+
+    /**
+     * Transforms a {@link Sort} into a {@link Sorting}.
+     *
+     * @param sort
+     *            {@code Sort} to transform
+     * @return a {@code Sorting} created from the {@code Sort}
+     */
+    public static final Sorting toSorting(final Sort sort) {
+        final Collection<Property> properties;
+
+        properties = sort.stream()
+            .map(SpringSorting::toProperty)
+            .toList();
+
+        return new Sorting(properties);
+    }
+
+    /**
+     * Private constructor.
+     */
     private SpringSorting() {
         super();
     }

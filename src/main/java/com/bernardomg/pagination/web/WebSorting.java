@@ -52,7 +52,6 @@ public final class WebSorting {
         if (sort == null) {
             properties = List.of();
         } else {
-            // TODO: show a log with errors, or throw exception
             properties = sort.stream()
                 .distinct()
                 .map(p -> p.split("\\|"))
@@ -104,6 +103,9 @@ public final class WebSorting {
         return "asc".equals(direction.toLowerCase()) || "desc".equals(direction.toLowerCase());
     }
 
+    /**
+     * Private constructor.
+     */
     private WebSorting() {
         super();
     }

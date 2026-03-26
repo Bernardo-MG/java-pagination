@@ -23,7 +23,7 @@
  */
 
 /**
- * Adapter for the domain and Spring.
+ * Mappers to adapt into the Spring model.
  */
 
 package com.bernardomg.pagination.springframework;

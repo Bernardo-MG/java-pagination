@@ -23,7 +23,7 @@
  */
 
 /**
- * Data domain.
+ * Pagination domain.
  */
 
 package com.bernardomg.pagination.domain;

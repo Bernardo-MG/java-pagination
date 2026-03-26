@@ -36,6 +36,11 @@ public record Pagination(int page, int size, boolean paged) {
         this(page, size, true);
     }
 
+    /**
+     * Unpaged pagination. To avoid applying pagination.
+     *
+     * @return an unpaged pagination
+     */
     public static Pagination unpaged() {
         return new Pagination(0, 0, false);
     }
